@@ -1,0 +1,77 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#2E5A3E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0F2419" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="podTrail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0A94E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E0A94E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="#0F2419"/>
+  <circle cx="450" cy="260" r="360" fill="url(#glow)"/>
+
+  <g stroke="#20402C" stroke-width="1" opacity="0.8">
+    <line x1="60" y1="80" x2="60" y2="620"/>
+    <line x1="150" y1="80" x2="150" y2="620"/>
+    <line x1="240" y1="80" x2="240" y2="620"/>
+    <line x1="330" y1="80" x2="330" y2="620"/>
+    <line x1="420" y1="80" x2="420" y2="620"/>
+    <line x1="510" y1="80" x2="510" y2="620"/>
+    <line x1="600" y1="80" x2="600" y2="620"/>
+    <line x1="690" y1="80" x2="690" y2="620"/>
+    <line x1="780" y1="80" x2="780" y2="620"/>
+    <line x1="840" y1="80" x2="840" y2="620"/>
+    <line x1="60" y1="80" x2="840" y2="80"/>
+    <line x1="60" y1="150" x2="840" y2="150"/>
+    <line x1="60" y1="220" x2="840" y2="220"/>
+    <line x1="60" y1="290" x2="840" y2="290"/>
+    <line x1="60" y1="360" x2="840" y2="360"/>
+    <line x1="60" y1="430" x2="840" y2="430"/>
+    <line x1="60" y1="500" x2="840" y2="500"/>
+    <line x1="60" y1="570" x2="840" y2="570"/>
+    <line x1="60" y1="620" x2="840" y2="620"/>
+  </g>
+
+  <g>
+    <rect x="150" y="150" width="90" height="70" fill="#4A3728" opacity="0.55" rx="2"/>
+    <rect x="330" y="220" width="90" height="70" fill="#4A3728" opacity="0.4" rx="2"/>
+    <rect x="600" y="290" width="90" height="70" fill="#4A3728" opacity="0.3" rx="2"/>
+    <rect x="420" y="430" width="90" height="70" fill="#4A3728" opacity="0.25" rx="2"/>
+  </g>
+
+  <g fill="#6FBF73">
+    <circle cx="195" cy="185" r="4"/>
+    <circle cx="375" cy="255" r="3.5"/>
+    <circle cx="645" cy="325" r="3"/>
+    <circle cx="465" cy="465" r="3"/>
+    <circle cx="270" cy="360" r="3"/>
+    <circle cx="720" cy="470" r="3.5"/>
+  </g>
+
+  <path d="M 120 570 Q 300 500 330 290 Q 360 150 600 220 Q 780 260 720 470"
+        fill="none" stroke="#E0A94E" stroke-width="2" stroke-dasharray="6 8" opacity="0.7"/>
+
+  <rect x="595" y="220" width="10" height="55" fill="url(#podTrail)"/>
+
+  <circle cx="600" cy="220" r="26" fill="none" stroke="#E0A94E" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="600" cy="220" r="42" fill="none" stroke="#E0A94E" stroke-width="1" opacity="0.3"/>
+
+  <g transform="translate(600,220)">
+    <circle r="9" fill="#F2EDE1"/>
+    <g stroke="#F2EDE1" stroke-width="2.5">
+      <line x1="-22" y1="-22" x2="-10" y2="-10"/>
+      <line x1="22" y1="-22" x2="10" y2="-10"/>
+      <line x1="-22" y1="22" x2="-10" y2="10"/>
+      <line x1="22" y1="22" x2="10" y2="10"/>
+    </g>
+    <g fill="none" stroke="#E0A94E" stroke-width="2">
+      <circle cx="-22" cy="-22" r="9"/>
+      <circle cx="22" cy="-22" r="9"/>
+      <circle cx="-22" cy="22" r="9"/>
+      <circle cx="22" cy="22" r="9"/>
+    </g>
+  </g>
+</svg>
