@@ -248,7 +248,25 @@ h2{
 }
 
 /* ---------- Impact ---------- */
-
+.impact-card{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px 22px;
+  background: linear-gradient(180deg, rgba(224,169,78,0.05), transparent);
+}
+.impact-title{
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+.impact-desc{
+  color: var(--mist-dim);
+  font-size: 0.92rem;
+  margin: 0;
+}
 impact-note{
   margin-top: 20px;
   font-size: 0.95rem;
