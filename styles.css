@@ -311,3 +311,41 @@ footer{
   html{ scroll-behavior: auto; }
   .btn{ transition: none; }
 }
+/* ---------- Dron flotante de scroll ---------- */
+.scroll-track{
+  position: fixed;
+  top: 12vh;
+  bottom: 12vh;
+  right: 34px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(224,169,78,0.35) 15%,
+    rgba(224,169,78,0.35) 85%,
+    transparent
+  );
+  z-index: 15;
+  pointer-events: none;
+}
+.scroll-drone{
+  position: fixed;
+  left: calc(100% - 35px);
+  top: 0;
+  width: 34px;
+  height: 34px;
+  z-index: 16;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+  will-change: transform;
+}
+
+@media (max-width: 860px){
+  .scroll-track,
+  .scroll-drone{ display: none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .scroll-track,
+  .scroll-drone{ display: none; }
+}

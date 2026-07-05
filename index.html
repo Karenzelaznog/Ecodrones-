@@ -165,6 +165,71 @@
     <span>&copy; 2026</span>
   </div>
 </footer>
+<!-- Dron flotante que sigue el scroll -->
+<div class="scroll-track" aria-hidden="true"></div>
+<svg class="scroll-drone" viewBox="0 0 60 60" aria-hidden="true">
+  <circle cx="30" cy="30" r="7" fill="#F2EDE1"/>
+  <g stroke="#F2EDE1" stroke-width="2.5">
+    <line x1="12" y1="12" x2="23" y2="23"/>
+    <line x1="48" y1="12" x2="37" y2="23"/>
+    <line x1="12" y1="48" x2="23" y2="37"/>
+    <line x1="48" y1="48" x2="37" y2="37"/>
+  </g>
+  <g fill="none" stroke="#E0A94E" stroke-width="2.5">
+    <circle cx="12" cy="12" r="7"/>
+    <circle cx="48" cy="12" r="7"/>
+    <circle cx="12" cy="48" r="7"/>
+    <circle cx="48" cy="48" r="7"/>
+  </g>
+</svg>
 
+<script>
+(function(){
+  var drone = document.querySelector('.scroll-drone');
+  var track = document.querySelector('.scroll-track');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion || !drone) return;
+
+  var ticking = false;
+  var t = 0;
+
+  function update(){
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = doc.scrollHeight - doc.clientHeight;
+    var progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+
+    var trackRect = track.getBoundingClientRect();
+    var travel = track.offsetHeight - drone.offsetHeight;
+    var y = trackRect.top + (progress * travel);
+
+    t += 0.06;
+    var bob = Math.sin(t) * 6;
+    var tilt = Math.sin(t * 0.7) * 6;
+
+    drone.style.transform =
+      'translate(-50%, ' + (y + bob) + 'px) rotate(' + tilt + 'deg)';
+
+    ticking = false;
+    requestAnimationFrame(loop);
+  }
+
+  function loop(){
+    update();
+  }
+
+  function onScroll(){
+    if (!ticking){
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  requestAnimationFrame(loop);
+})();
+</script>
 </body>
 </html>
